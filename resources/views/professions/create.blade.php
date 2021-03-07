@@ -22,7 +22,7 @@
 
     <div>
         <label for="">Número telefónico:</label>
-        <input class="form-control" type="number" name="phonenumber" id="" placeholder="Número telefónico">
+        <input class="form-control" type="text" name="phonenumber" min="0" max="10000000000" id="" placeholder="Número telefónico">
     </div>
 
     <div>
@@ -37,7 +37,7 @@
 
     <div>
         <label for="">Descripción de la carrera:</label>
-        <textarea class="form-control" type="text" name="description" id="" cols="30" rows="15"></textarea>
+        <textarea class="form-control" type="text" name="description" id="" cols="20" rows="15"></textarea>
     </div>
 
     <div>

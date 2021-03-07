@@ -49,7 +49,7 @@ class MusicController extends Controller
      */
     public function show(Music $music)
     {
-        //
+        return view('musics.show', compact('music'));
     }
 
     /**

@@ -18,7 +18,7 @@ class CreateProfessionsTable extends Migration
             $table->string('name', 100);
             $table->integer('ageyears');
             $table->string('profession', 100);
-            $table->tinyInteger('phonenumber');
+            $table->string('phonenumber', 100);
             $table->integer('yearsworking');
             $table->string('inherited', 150);
             $table->string('description');

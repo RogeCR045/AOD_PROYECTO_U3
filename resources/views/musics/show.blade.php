@@ -10,62 +10,73 @@
          <div class="row">
           <div class="col md 8">
 
-            <h2 class="card-title">Listado de canciones registrados en la base de datos</h2>
+            <div class="card-title">
+                <h2> Canción:{{ $music->songname }} {{  $music->artist }}</h2>
+            </div>
             </div>
             <div class="col md 4">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 
-               <a class="btn btn-primary" href="{{ route('musics.create') }}"><i class="fa fas-add"></i> +Nuevo</a>
+               <a class="btn btn-primary" href="{{ route('musics.index') }}"><i class="fa fas-add"></i> < Regresar</a>
               
               </div>
             </div>
             </div>
         </div>
 
+        
+
         <div class="card-body">
          <table class="table table-striped">
 
         <thead>
             <tr>
-                <th>Nombre de la canción</th>
+                <th>Imagen de la canción</th>
                 <th>Información</th>
                 <th>Descripción</th>
-                <th>Acciones</th>
+               
                 
             </tr>
         </thead>
 
         <tbody>
-            @forelse ($musicas as $music)
+          
        
         
        <tr>
        
       <td>
-        <a class="btn btn-info btn-small" href="{{ route('musics.show', $music->id) }}">  
-        <h4>{{ $music->songname }} {{  $music->artist }}</h4></td>
-    </a>
+        
+        <img src="\images\musica.jpg" alt="Imagen">
+   
       <td>
          <p><b>genéro:</b> {{ $music->gender }}</p>
          <p><b>año de lanzamiento:</b> {{ $music-> yearlaunch }}</p>
          <p><b>album:</b> {{ $music->album }}</p>
          <p><b>redes sociales:</b> {{ $music->socialmedia }}</p>
-         <p><b>Tiempo escuchandolo:</b> {{ $music->timelistening }}</p>
+         <p><b>Tiempo escuchandolo:</b> {{ $music->timelistening }} Año(s)</b></p>
          <p><b>letra de la cancion:</b> {{ $music->letter }}</p>
       </td>
       <td><p>{{ $music->comment }}</p></td>
-        <td>ver | editar | eliminar</td>
+       
       
         
-        @empty
-        <h1>La tabla no tiene datos</h1>
+     
+       
     </tr>
-        @endforelse
+       
     </tbody>
         </table> 
 
         </div>
+        <div class="card-footer">
+            <div class="col md 4">
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    
+                   <a class="btn btn-primary" href="{{ route('musics.edit', $music->id) }}"><i class="fa fas-add"></i>Editar</a>
+                   <a class="btn btn-danger" href="{{ route('musics.destroy', $music->id) }}"><i class="fa fas-add"></i>Eliminar</a>
+                  </div>
+                </div>
         </div>
-
-
-       
+        </div>
+    </div>

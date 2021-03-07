@@ -49,7 +49,7 @@ class ProfessionController extends Controller
      */
     public function show(Profession $profession)
     {
-       //
+        return view('professions.show', compact('profession'));
     }
 
     /**
